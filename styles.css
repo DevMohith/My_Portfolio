@@ -13,15 +13,16 @@ body{
 
 }
 
-/*Header and main content Styling*/
+
 
 #header{
     width: 100%;
-    height: auto;
     min-height: 100vh;
-    background-image: url(./images/Web\ Cover.png);
+    background-image: url('images/cover.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    
 }
 
 .container1{
@@ -36,16 +37,47 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: #080808;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 25px;
     height: 60px;
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 1000;
+
 
 }
 
 .logo {
-    width: 300px;
+  list-style: none;
+    width: 200px;
     margin-left: 0px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #888;
+}
 
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 28px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 nav ul li {
@@ -135,7 +167,7 @@ button {
 
 }
 
-/*Features Styling*/
+
 .container2{
     padding: 10px 10%;
 }
@@ -165,11 +197,11 @@ button {
 }
 
 .feature-box:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Container styling */
+
 .features-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -180,7 +212,7 @@ button {
     
   }
   
-  /* Individual feature box styling */
+  
   .feature-box {
     background-color: #1a1a1a; 
     border-radius: 10px;
@@ -189,7 +221,7 @@ button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Headings and text */
+ 
   .feature-box h3 {
     color: #ff4a57;
     font-size: 1.2rem;
@@ -272,7 +304,6 @@ button {
     box-shadow: 0 8px 15px grey;
 }
 
- /* Add additional styles for skill sliders */
 
  .my-skills-heading {
   text-align: center;
@@ -337,19 +368,20 @@ button {
 
 .profile-card {
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
   align-items: center;
   margin: 50px 0;
-  background-color: #fff;
+  background-color:#f0f0f0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 440px;
-  height: 200px;
-  padding: 20px;
+  width: 480px;
+  height: 250px;
+  padding: 5px;
   text-align: center;
-  margin-top: auto; /* This ensures the card stays near the bottom */
+  margin-top: auto; 
   margin-bottom: 30px;
-  margin-left: 39%;
+  margin-left:710px;
+  object-fit: cover;
 }
 
 .profile-card img {
@@ -383,7 +415,7 @@ button {
   color: #ff014f; 
 }
 
-/* Copyright section */
+
 .copyright {
   text-align: center;
   font-size: 14px;
@@ -403,124 +435,177 @@ button {
 }
 
 
-/* Small Phones (iPhone SE, iPhone 12 Mini) */
+
 @media (max-width: 480px) {
-    nav ul li {
-      margin: 10px 10px;
-    }
-  
-    nav ul li a {
-      font-size: 14px; 
-    }
-  
-    button {
-      font-size: 16px;
-      padding: 12px;
-      margin: 0 12px; 
-    }
-  
-    .header-text h1 {
-      font-size: 36px; 
-    }
-  
-    .features-container {
-      grid-template-columns: 1fr;
-      gap: 10px; 
-    }
-    .projects-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-     }
-  }
-  
-  /* Tablets (iPad Mini, iPad) */
-  @media (min-width: 481px) and (max-width: 768px) {
-    nav ul li {
-      margin: 10px 15px;
-    }
-  
-    nav ul li a {
-      font-size: 16px; 
-    }
-  
-    button {
-      font-size: 18px;
-      padding: 16px;
-    }
-  
-    .header-text h1 {
-      font-size: 48px; 
-    }
-  
-    .features-container {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
 
-    .projects-container {
-       grid-template-columns: repeat(2, 1fr);
-       gap: 15px;
-    }
-  }
-  
-  /* Small Desktops (Laptops) */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .features-container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .projects-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-
-
-  
-    nav ul li a {
-      font-size: 18px;
-    }
-  
-    button {
-      font-size: 20px;
-      padding: 20px;
-    }
-  
-    .header-text h1 {
-      font-size: 56px;
-    }
-  }
-  
-  /* Large Desktops (Wider screens) */
-  @media (min-width: 1025px) {
-    nav ul li {
-      margin: 10px 20px;
-    }
-  
-    .features-container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .projects-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-      }
-  
-    .header-text h1 {
-      font-size: 60px; 
-    }
+  #header{
+  width: 100%;
+  height: auto;
+  background-image: url('images/cover.png');
   }
 
-
-  @media (max-width: 768px) {
-    .features h1 {
-        font-size: 2rem;
-    }
+  .logo {
+    display: none;
 }
 
-@media (max-width: 480px) {
-    .features h1 {
-        font-size: 1.5rem;
-    }
+  .hamburger {
+    display: block;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #080808;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 10px 0;
+    text-align: center;
+
+}
+
+  .header-text h1 {
+    font-size: 24px;
+  }
+  .features-container, .projects-container, .skills-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .profile-card {
+    width: 100%;
+    margin: 10px auto;
+  }
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+
+  .hamburger {
+    display: block;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #080808;
+    position: absolute;
+    top: 60px; 
+    right: 0;
+    width: 100%; 
+    padding: 10px 0;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 10px 0;
+    text-align: center;
+
+}
+  .header-text h1 {
+    font-size: 32px;
+  }
+  .features-container, .projects-container, .skills-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .profile-card {
+    width: 80%;
+    margin: 20px auto;
+  }
+  button {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px 5%;
+  }
+
+  .logo {
+    width: 200px; 
+    flex-shrink: 0; 
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 10px 15px; 
+    font-size: 16px; 
+    white-space: nowrap; 
+  }
+
+  .header-text h1 {
+    font-size: 40px;
+  }
+
+  .features-container,
+  .projects-container,
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .profile-card {
+    width: 70%;
+    margin: 30px auto;
+  }
+
+  button {
+    width: auto;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1599px) {
+
+  .logo {
+    width: 200px;
+  }
+
+  .header-text h1 {
+    font-size: 40px;
+  }
+  .features-container, .projects-container, .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  .profile-card {
+    width: 60%;
+    margin: 40px auto;
+  }
+  button {
+    width: auto;
+    font-size: 22px;
+  }
 }

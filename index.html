@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohith Tummala's personal portfolio showcasing projects, skills, and contact information.">
+    <meta name="keywords" content="Mohith Tummala, portfolio, full stack developer, software engineer, projects">
     <title>Mohith Tummala || Personal Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
@@ -13,14 +16,16 @@
     <div id="header">
         <div class="container1">
             <nav>
-                <img src="images/logo.png" class="logo">
-                <ul>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Features">Features</a></li>
-                    <li><a href="#Projects">Projects</a></li>
-                    <li><a href="#Skills">My Skills</a></li>
+                <li class="logo">MOHITH TUMMALA</li>
+                <button class="hamburger" id="hamburger-menu">
+                    &#9776; 
+                </button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <a href="MOHITH TUMMALA CV.pdf" target="_blank" id="downloadCVLink" ><button>Download CV</button></a>
-                    
                 </ul>
             </nav>
             <div class="header-text">
@@ -132,7 +137,7 @@
           <h1 class="my-skills-heading">MY SKILLS</h1>
 
           <div class="skills-container">
-              <!-- Tools and Technologies -->
+              
               <div class="skill-section">
                   <h2>Tools & Technologies</h2>
                   <div class="skill">
@@ -162,7 +167,7 @@
                   </div>
               </div>
 
-            <!-- Development Skills -->
+          
             <div class="skill-section">
                 <h2>Development Skills</h2>
                 <div class="skill">
@@ -201,6 +206,7 @@
           <p>Software Engineer <br>
             Phone: +49 1551 007 1093 <br>
             Email: mohithtummala.de@gmail.com </p>
+            <a href="mailto:mohithtummala.de@gmail.com"><button class="contact">Contact Me</button></a>
           <div class="social-links">
               <a href="https://www.linkedin.com/in/mohithtummala/" target="_blank"><i class="fa fa-linkedin"></i></a>
               <a href="https://github.com/DevMohith" target="_blank"><i class="fa fa-github"></i></a>
@@ -212,19 +218,37 @@
       <p>&copy; 2024 Mohith Tummala. All Rights Reserved. <a href="mailto:mohithtummala.de@gmail.com">Contact Me</a></p>
   </div>
 
+<script>
 
-            <script>
+const hamburger = document.getElementById('hamburger-menu');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active'); // Toggle the 'active' class
+});
 
 function downloadCV() {
     var cvLink = document.getElementById("downloadCVLink");
     var newTab = window.open(cvLink.href, '_blank');
     
-    // Wait a little while to ensure the tab is opened before triggering download
     setTimeout(function() {
-        newTab.location.href = cvLink.href + "?download=true"; // Force download on the opened tab
+        newTab.location.href = cvLink.href + "?download=true"; 
     }, 500);
 }
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
 
+const smoothScroll = debounce((target) => {
+    window.scrollTo({
+        top: target.offsetTop - document.querySelector('nav').offsetHeight,
+        behavior: 'smooth'
+    });
+}, 100);
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -239,15 +263,7 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
         }
     });
 });
-            </script>
-
-     
-
-
-        
-           
-
-   
-    
+</script>
+ 
 </body>
 </html>
